@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="count.css">
+    <title>Words Count</title>
+</head>
+<body>
+  <div class="box"
+    <h2>words count</h2>
+    <textarea id="textarea" cols="30" rows="10"></textarea>
+
+    <p>
+      Number of words:
+      <span id="word-count"></span>
+    </p>
+
+    <button id="btn">Count words</button>
+  </div>
+
+    <script>
+        function countWords(str) {
+  const arr = str.split(' ');
+
+  return arr.filter(word => word !== '').length;
+}
+
+const button = document.getElementById('btn');
+
+button.addEventListener('click', () => {
+  const textarea = document.getElementById('textarea');
+
+  const wordCount = countWords(textarea.value);
+  console.log(wordCount);
+
+  const span = document.getElementById('word-count');
+  span.innerHTML = wordCount;
+});
+    </script>
+</body>
+</html>
